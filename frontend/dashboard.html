@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CyberQuest - Cyber Security Learning Dashboard"
+    >
+
+    <title>Dashboard | CyberQuest</title>
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="dashboard-background">
+
+        <div class="dashboard-grid"></div>
+
+        <div class="dashboard-glow glow-one"></div>
+
+        <div class="dashboard-glow glow-two"></div>
+
+        <div class="dashboard-particles">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="dashboard-header">
+
+        <a
+            href="dashboard.html"
+            class="dashboard-brand"
+        >
+
+            <div class="brand-logo">
+                CQ
+            </div>
+
+            <div class="brand-name">
+                Cyber<span>Quest</span>
+            </div>
+
+        </a>
+
+
+        <div class="header-right">
+
+            <div class="player-mini">
+
+                <div class="player-avatar">
+                    <span id="playerInitial">U</span>
+                </div>
+
+                <div class="player-info">
+
+                    <strong id="playerName">
+                        Player
+                    </strong>
+
+                    <small>
+                        Cyber Explorer
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to light theme"
+>
+    ☀️
+</button>
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- =====================================
+             WELCOME
+        ====================================== -->
+
+        <section class="welcome-section">
+
+
+            <div class="welcome-text">
+
+                <div class="section-tag">
+                    PLAYER COMMAND CENTER
+                </div>
+
+
+                <h1>
+                    Welcome,
+                    <span id="welcomeName">
+                        Explorer
+                    </span>
+                </h1>
+
+
+                <p>
+                    Continue your cyber security journey
+                    and unlock all 100 levels.
+                </p>
+
+            </div>
+
+
+            <!-- XP -->
+
+            <div class="xp-card">
+
+                <div class="xp-top">
+
+                    <span>
+                        EXPERIENCE
+                    </span>
+
+                    <strong id="xpText">
+                        0 XP
+                    </strong>
+
+                </div>
+
+
+                <div class="xp-bar">
+
+                    <span
+                        id="xpProgress"
+                    ></span>
+
+                </div>
+
+
+                <div class="xp-bottom">
+
+                    <span>
+                        Level Progress
+                    </span>
+
+                    <span id="levelProgressText">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STATS
+        ====================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◈
+                </div>
+
+                <div>
+
+                    <span>
+                        WORLD
+                    </span>
+
+                    <strong id="worldStat">
+                        1
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◆
+                </div>
+
+                <div>
+
+                    <span>
+                        LEVEL
+                    </span>
+
+                    <strong id="levelStat">
+                        1
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ★
+                </div>
+
+                <div>
+
+                    <span>
+                        POINTS
+                    </span>
+
+                    <strong id="pointsStat">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ●
+                </div>
+
+                <div>
+
+                    <span>
+                        COINS
+                    </span>
+
+                    <strong id="coinsStat">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTINUE
+        ====================================== -->
+
+        <section class="continue-card">
+
+
+            <div class="continue-info">
+
+                <div class="continue-icon">
+                    ▶
+                </div>
+
+
+                <div>
+
+                    <span>
+                        CONTINUE MISSION
+                    </span>
+
+                    <h2 id="continueTitle">
+                        World 1 · Level 1
+                    </h2>
+
+                    <p id="continueDescription">
+                        Start your cyber security journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="continue-button"
+                id="continueButton"
+            >
+
+                Continue
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             WORLDS
+        ====================================== -->
+
+        <section class="worlds-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="section-tag">
+                        CYBER SECURITY CAMPAIGN
+                    </div>
+
+                    <h2>
+                        Explore Worlds
+                    </h2>
+
+                </div>
+
+
+                <div class="world-count">
+                    10 WORLDS
+                </div>
+
+            </div>
+
+
+            <!-- World cards -->
+
+            <div
+                class="worlds-grid"
+                id="worldsGrid"
+            >
+
+                <!-- JavaScript will create
+                     all 10 worlds here -->
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         LEVEL MODAL
+    ========================================== -->
+
+    <div
+        class="level-modal"
+        id="levelModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-box">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-icon">
+                ⚡
+            </div>
+
+
+            <div class="section-tag">
+                MISSION READY
+            </div>
+
+
+            <h2 id="modalTitle">
+                Level 1
+            </h2>
+
+
+            <p id="modalDescription">
+                Your mission is ready.
+            </p>
+
+
+            <div class="mission-details">
+
+                <div>
+
+                    <span>
+                        DIFFICULTY
+                    </span>
+
+                    <strong id="modalDifficulty">
+                        Easy
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        REWARD
+                    </span>
+
+                    <strong id="modalReward">
+                        100 XP
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="launch-button"
+                id="launchButton"
+            >
+
+                Start Mission
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        Message
+    </div>
+
+
+
+    <!-- Dashboard JavaScript -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

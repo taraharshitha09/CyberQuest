@@ -1,0 +1,1243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 255, 220, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(100, 50, 255, 0.08),
+            transparent 30%
+        ),
+        #05080d;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* BACKGROUND */
+
+.cyber-grid {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.15;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 220, 0.15) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 220, 0.15) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+
+.glow {
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+}
+
+
+.glow-one {
+
+    top: -100px;
+    left: -100px;
+
+    background: rgba(0, 255, 220, 0.08);
+}
+
+
+.glow-two {
+
+    right: -100px;
+    bottom: -100px;
+
+    background: rgba(100, 50, 255, 0.08);
+}
+
+
+/* HEADER */
+
+.mission-header {
+
+    height: 80px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid rgba(0, 255, 220, 0.15);
+
+    background:
+        rgba(5, 8, 13, 0.85);
+
+    backdrop-filter: blur(15px);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-weight: 700;
+}
+
+
+.brand-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #00ffe0;
+
+    color: #00ffe0;
+
+    font-size: 12px;
+}
+
+
+.back-button {
+
+    padding: 11px 20px;
+
+    background: transparent;
+
+    color: #00ffe0;
+
+    border:
+        1px solid rgba(0, 255, 224, 0.5);
+
+    cursor: pointer;
+
+    font-family: "Orbitron", sans-serif;
+
+    transition: 0.3s;
+}
+
+
+.back-button:hover {
+
+    background: #00ffe0;
+
+    color: #05080d;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 224, 0.3);
+}
+
+
+/* MAIN */
+
+.mission-container {
+
+    width: min(1000px, 90%);
+
+    margin: 60px auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.mission-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+#worldLabel {
+
+    font-family: "Orbitron", sans-serif;
+
+    color: #00ffe0;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+
+#missionTitle {
+
+    margin-top: 12px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(28px, 5vw, 48px);
+}
+
+
+.level-box {
+
+    min-width: 110px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(0, 255, 224, 0.4);
+
+    background:
+        rgba(0, 255, 224, 0.04);
+}
+
+
+.level-box span {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: #8c999f;
+
+    letter-spacing: 2px;
+}
+
+
+.level-box strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 28px;
+
+    color: #00ffe0;
+}
+
+
+/* INFO */
+
+.mission-info {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+#difficulty,
+#reward {
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+#difficulty {
+
+    color: #ffd166;
+}
+
+
+#reward {
+
+    color: #38ff88;
+}
+
+
+/* CARD */
+
+.mission-card {
+
+    margin-top: 25px;
+
+    padding: 40px;
+
+    border:
+        1px solid rgba(0, 255, 224, 0.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 255, 224, 0.05),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    box-shadow:
+        0 0 50px rgba(0, 255, 224, 0.04);
+}
+
+
+.mission-tag {
+
+    color: #00ffe0;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+#missionDescription {
+
+    margin-top: 15px;
+
+    color: #aeb8bd;
+
+    line-height: 1.7;
+}
+
+
+.question-box {
+
+    margin-top: 35px;
+}
+
+
+.question-box h2 {
+
+    font-size: 21px;
+
+    line-height: 1.6;
+}
+
+
+/* OPTIONS */
+
+.options-container {
+
+    margin-top: 25px;
+
+    display: grid;
+
+    gap: 14px;
+}
+
+
+.option {
+
+    width: 100%;
+
+    padding: 18px;
+
+    text-align: left;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    font-size: 15px;
+}
+
+
+.option:hover {
+
+    border-color: #00ffe0;
+
+    background:
+        rgba(0, 255, 224, 0.06);
+
+    transform: translateX(4px);
+}
+
+
+.option.selected {
+
+    border-color: #00ffe0;
+
+    background:
+        rgba(0, 255, 224, 0.12);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 224, 0.1);
+}
+
+
+.option.correct {
+
+    border-color: #38ff88;
+
+    background:
+        rgba(56, 255, 136, 0.1);
+}
+
+
+.option.wrong {
+
+    border-color: #ff4d6d;
+
+    background:
+        rgba(255, 77, 109, 0.1);
+}
+
+
+/* SUBMIT */
+
+.submit-button {
+
+    margin-top: 30px;
+
+    padding: 16px 30px;
+
+    background: #00ffe0;
+
+    color: #05080d;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.submit-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 224, 0.35);
+}
+
+
+.submit-button:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* RESULT */
+
+.result-message {
+
+    margin-top: 20px;
+
+    min-height: 25px;
+
+    font-weight: 600;
+}
+
+
+.result-message.success {
+
+    color: #38ff88;
+}
+
+
+.result-message.error {
+
+    color: #ff4d6d;
+}
+
+/* =========================================================
+   CYBERQUEST - MISSION LIGHT THEME
+========================================================= */
+
+/* PAGE BACKGROUND */
+
+body.light-theme {
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 127, 140, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(66, 103, 213, 0.06),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbfd 0%,
+            #edf5f8 50%,
+            #f8fbfd 100%
+        );
+
+    color: #13252d;
+}
+
+
+/* GRID */
+
+body.light-theme .cyber-grid {
+
+    opacity: 0.22;
+}
+
+
+/* HEADER */
+
+body.light-theme .mission-header {
+
+    background:
+        rgba(248, 251, 253, 0.82);
+
+    border-bottom:
+        1px solid rgba(0, 127, 140, 0.15);
+
+    box-shadow:
+        0 4px 20px rgba(0, 70, 80, 0.05);
+}
+
+
+/* BRAND */
+
+body.light-theme .brand {
+
+    color: #13252d;
+}
+
+
+body.light-theme .brand-icon {
+
+    color: #007f8c;
+
+    border-color: #007f8c;
+
+    box-shadow:
+        0 0 15px rgba(0, 127, 140, 0.12);
+}
+
+
+/* BACK BUTTON */
+
+body.light-theme .back-button {
+
+    color: #607780;
+
+    border-color:
+        rgba(0, 127, 140, 0.18);
+
+    background:
+        rgba(0, 127, 140, 0.04);
+}
+
+
+body.light-theme .back-button:hover {
+
+    color: #007f8c;
+
+    border-color: #007f8c;
+
+    background:
+        rgba(0, 127, 140, 0.08);
+}
+
+
+/* MISSION TOP */
+
+body.light-theme #worldLabel {
+
+    color: #007f8c;
+}
+
+
+body.light-theme #missionTitle {
+
+    color: #13252d;
+}
+
+
+body.light-theme .level-box {
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border-color:
+        rgba(0, 127, 140, 0.18);
+}
+
+
+body.light-theme .level-box span {
+
+    color: #607780;
+}
+
+
+body.light-theme .level-box strong {
+
+    color: #007f8c;
+}
+
+
+/* MISSION INFO */
+
+body.light-theme .mission-info {
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border-color:
+        rgba(0, 127, 140, 0.16);
+
+    box-shadow:
+        0 6px 25px rgba(0, 70, 80, 0.05);
+}
+
+
+body.light-theme .mission-info > span {
+
+    color: #007f8c;
+}
+
+
+body.light-theme .timer-box,
+body.light-theme .lives-box {
+
+    border-color:
+        rgba(0, 127, 140, 0.14);
+
+    background:
+        rgba(0, 127, 140, 0.035);
+}
+
+
+body.light-theme .timer-box span,
+body.light-theme .lives-box span {
+
+    color: #607780;
+}
+
+
+body.light-theme .timer-box strong {
+
+    color: #007f8c;
+}
+
+
+/* MISSION CARD */
+
+body.light-theme .mission-card {
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    border-color:
+        rgba(0, 127, 140, 0.18);
+
+    box-shadow:
+        0 12px 40px rgba(0, 70, 80, 0.07);
+}
+
+
+body.light-theme .mission-tag {
+
+    color: #007f8c;
+}
+
+
+body.light-theme #missionDescription {
+
+    color: #607780;
+}
+
+
+body.light-theme .question-box {
+
+    background:
+        rgba(0, 127, 140, 0.025);
+
+    border-color:
+        rgba(0, 127, 140, 0.12);
+}
+
+
+body.light-theme #question {
+
+    color: #13252d;
+}
+
+
+/* OPTIONS */
+
+body.light-theme .option {
+
+    background:
+        rgba(0, 127, 140, 0.025);
+
+    border-color:
+        rgba(0, 127, 140, 0.14);
+
+    color: #243942;
+}
+
+
+body.light-theme .option:hover {
+
+    background:
+        rgba(0, 127, 140, 0.07);
+
+    border-color:
+        rgba(0, 127, 140, 0.38);
+
+    color: #007f8c;
+}
+
+
+/* HINT */
+
+body.light-theme .hint-panel {
+
+    background:
+        rgba(0, 127, 140, 0.035);
+
+    border-color:
+        rgba(0, 127, 140, 0.18);
+}
+
+
+body.light-theme .hint-header span:first-child {
+
+    color: #007f8c;
+}
+
+
+body.light-theme #hintStatus {
+
+    color: #607780;
+}
+
+
+body.light-theme .hint-button {
+
+    background:
+        rgba(0, 127, 140, 0.05);
+
+    border-color:
+        rgba(0, 127, 140, 0.28);
+
+    color: #007f8c;
+}
+
+
+body.light-theme .hint-button:hover {
+
+    background:
+        rgba(0, 127, 140, 0.10);
+
+    border-color: #007f8c;
+}
+
+
+body.light-theme .hint-message {
+
+    background:
+        rgba(0, 127, 140, 0.045);
+
+    border-color: #007f8c;
+
+    color: #526b74;
+}
+
+
+/* SUBMIT */
+
+body.light-theme .submit-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #007f8c,
+            #4267d5
+        );
+
+    border-color: #007f8c;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 127, 140, 0.15);
+}
+
+
+body.light-theme .submit-button:hover {
+
+    box-shadow:
+        0 12px 30px rgba(0, 127, 140, 0.23);
+}
+
+
+/* RESULT */
+
+body.light-theme .result-message {
+
+    color: #526b74;
+}
+
+
+/* NEXT MISSION */
+
+body.light-theme .next-mission-box {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(242, 249, 251, 0.96)
+        );
+
+    border-color:
+        rgba(0, 127, 140, 0.22);
+
+    box-shadow:
+        0 15px 45px rgba(0, 70, 80, 0.10);
+}
+
+
+body.light-theme .complete-icon {
+
+    color: #007f8c;
+
+    border-color: #007f8c;
+
+    box-shadow:
+        0 0 20px rgba(0, 127, 140, 0.10);
+}
+
+
+body.light-theme #completionTitle {
+
+    color: #13252d;
+}
+
+
+body.light-theme #completionText {
+
+    color: #607780;
+}
+
+
+body.light-theme .next-mission-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #007f8c,
+            #4267d5
+        );
+
+    border-color: #007f8c;
+
+    color: #ffffff;
+}
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .mission-header {
+
+        padding: 0 20px;
+    }
+
+
+    .mission-container {
+
+        width: 92%;
+
+        margin: 35px auto;
+    }
+
+
+    .mission-top {
+
+        align-items: flex-start;
+    }
+
+
+    .mission-card {
+
+        padding: 25px;
+    }
+
+
+    #missionTitle {
+
+        font-size: 27px;
+    }
+
+
+    .level-box {
+
+        min-width: 75px;
+    }
+}
+/* =========================================
+   NEXT MISSION
+========================================= */
+
+.next-mission-box {
+
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px solid rgba(56, 255, 136, 0.4);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56, 255, 136, 0.08),
+            rgba(0, 255, 224, 0.04)
+        );
+
+    box-shadow:
+        0 0 35px rgba(56, 255, 136, 0.08);
+
+    animation: missionComplete 0.5s ease;
+}
+
+
+.next-mission-box.show {
+    display: block;
+}
+
+
+.complete-icon {
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 2px solid #38ff88;
+
+    color: #38ff88;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 0 20px rgba(56, 255, 136, 0.25);
+}
+
+
+.next-mission-box h2 {
+
+    font-family: "Orbitron", sans-serif;
+
+    color: #38ff88;
+
+    font-size: 22px;
+}
+
+
+.next-mission-box p {
+
+    margin-top: 10px;
+
+    color: #aeb8bd;
+}
+
+
+.next-mission-button {
+
+    margin-top: 22px;
+
+    padding: 15px 28px;
+
+    border: 1px solid #00ffe0;
+
+    background: #00ffe0;
+
+    color: #05080d;
+
+    cursor: pointer;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.next-mission-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(0, 255, 224, 0.4);
+}
+
+
+@keyframes missionComplete {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+}
+/* =========================================
+   TIMER & CHANCES
+========================================= */
+
+.mission-info {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.timer-box,
+.lives-box {
+    padding: 10px 16px;
+
+    border: 1px solid rgba(0, 255, 224, 0.25);
+
+    background: rgba(0, 255, 224, 0.04);
+
+    min-width: 120px;
+}
+
+.timer-box span,
+.lives-box span {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #8c999f;
+
+    margin-bottom: 5px;
+}
+
+.timer-box strong {
+    font-family: "Orbitron", sans-serif;
+
+    color: #00ffe0;
+
+    font-size: 18px;
+}
+
+.lives-box strong {
+    font-size: 16px;
+
+    letter-spacing: 2px;
+}
+
+.timer-warning {
+    color: #ffd166 !important;
+}
+
+.timer-danger {
+    color: #ff4d6d !important;
+
+    animation: timerPulse 0.7s infinite;
+}
+
+@keyframes timerPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}
+/* ==============================
+   HINT SYSTEM
+   ============================== */
+
+.hint-panel {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border: 1px solid rgba(0, 255, 224, 0.25);
+    background: rgba(0, 255, 224, 0.035);
+    position: relative;
+    overflow: hidden;
+}
+
+.hint-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #00ffe0;
+    box-shadow: 0 0 12px rgba(0, 255, 224, 0.7);
+}
+
+.hint-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.hint-header span:first-child {
+    color: #00ffe0;
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+#hintStatus {
+    color: #8c999f;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.hint-button {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid rgba(0, 255, 224, 0.35);
+    background: rgba(0, 255, 224, 0.06);
+    color: #00ffe0;
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.hint-button:hover {
+    background: rgba(0, 255, 224, 0.12);
+    border-color: #00ffe0;
+    box-shadow: 0 0 18px rgba(0, 255, 224, 0.2);
+    transform: translateY(-1px);
+}
+
+.hint-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.hint-message {
+    display: none;
+    margin-top: 14px;
+    padding: 13px 15px;
+    border-left: 2px solid #00ffe0;
+    background: rgba(0, 255, 224, 0.05);
+    color: #d8ffff;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.hint-message.show {
+    display: block;
+    animation: hintReveal 0.35s ease;
+}
+
+@keyframes hintReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

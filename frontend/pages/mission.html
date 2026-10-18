@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mission | CyberQuest</title>
+
+    <link rel="stylesheet" href="../css/mission.css">
+</head>
+
+<body>
+
+    <div class="cyber-grid"></div>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+
+    <!-- HEADER -->
+
+    <header class="mission-header">
+
+        <div class="brand">
+            <span class="brand-icon">CQ</span>
+            <span>CyberQuest</span>
+        </div>
+
+        <button id="backButton" class="back-button">
+            ← Dashboard
+        </button>
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to light theme"
+>
+    ☀️
+</button>
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="mission-container">
+
+        <div class="mission-top">
+
+            <div>
+
+                <span id="worldLabel">
+                    WORLD 1
+                </span>
+
+                <h1 id="missionTitle">
+                    Loading Mission...
+                </h1>
+
+            </div>
+
+
+            <div class="level-box">
+
+                <span>LEVEL</span>
+
+                <strong id="levelNumber">
+                    1
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFO -->
+
+       <div class="mission-info">
+
+    <span id="difficulty">
+        EASY
+    </span>
+
+    <span id="reward">
+        +100 XP
+    </span>
+
+    <div class="timer-box">
+        <span>TIME</span>
+        <strong id="timer">02:00</strong>
+    </div>
+
+    <div class="lives-box">
+        <span>CHANCES</span>
+        <strong id="lives">❤️ ❤️ ❤️</strong>
+    </div>
+
+</div>
+
+        </div>
+
+
+        <!-- MISSION -->
+
+        <section class="mission-card">
+
+            <div class="mission-tag">
+                MISSION OBJECTIVE
+            </div>
+
+            <p id="missionDescription">
+                Loading mission...
+            </p>
+
+
+            <div class="question-box">
+                
+
+                <h2 id="question">
+                    Loading question...
+                </h2>
+                <div class="hint-panel">
+
+    <div class="hint-header">
+        <span>💡 HINT</span>
+        <span id="hintStatus">AVAILABLE</span>
+    </div>
+
+    <button
+        type="button"
+        id="hintButton"
+        class="hint-button">
+        SHOW HINT
+    </button>
+
+    <div
+        id="hintMessage"
+        class="hint-message">
+    </div>
+
+</div>
+
+
+                <div id="options"
+                     class="options-container">
+                </div>
+
+            </div>
+
+
+            <button id="submitButton"
+                    class="submit-button">
+
+                SUBMIT ANSWER →
+
+            </button>
+
+
+            <div id="resultMessage"
+                 class="result-message">
+            </div>
+            <div id="nextMissionBox" class="next-mission-box">
+
+    <div class="complete-icon">✓</div>
+
+    <h2 id="completionTitle">
+        Mission Complete!
+    </h2>
+
+    <p id="completionText">
+        Great work, Agent!
+    </p>
+
+    <button id="nextMissionButton"
+            class="next-mission-button">
+        NEXT LEVEL →
+    </button>
+
+</div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/missions.js"></script>
+    <script src="../js/mission.js"></script>
+
+</body>
+
+</html>

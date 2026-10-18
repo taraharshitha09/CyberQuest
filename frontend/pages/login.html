@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Log in to your CyberQuest account."
+    >
+
+    <title>Log In | CyberQuest</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+
+<body>
+
+    <!-- Background -->
+
+    <div class="auth-background">
+
+        <div class="auth-grid"></div>
+
+        <div class="auth-glow glow-left"></div>
+        <div class="auth-glow glow-right"></div>
+
+        <div class="auth-particles">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Header -->
+
+    <header class="auth-header">
+
+        <a
+            href="../index.html"
+            class="auth-brand"
+        >
+
+            <span class="auth-brand-mark">
+                CQ
+            </span>
+
+            <span class="auth-brand-name">
+                Cyber<span>Quest</span>
+            </span>
+
+        </a>
+
+
+        <a
+            href="../index.html"
+            class="back-home"
+        >
+            ← Home
+        </a>
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to light theme"
+        >
+            ☀️
+        </button>
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="auth-container">
+
+
+        <!-- Left Section -->
+
+        <section class="auth-intro">
+
+            <div class="intro-tag">
+                WELCOME BACK
+            </div>
+
+
+            <h1>
+                Continue Your
+                <span>Cyber Journey.</span>
+            </h1>
+
+
+            <p>
+                Log in to continue your progress,
+                unlock new levels, and keep improving
+                your cyber security skills.
+            </p>
+
+
+            <div class="intro-features">
+
+                <div class="intro-feature">
+
+                    <span class="feature-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Your progress stays saved
+                    </span>
+
+                </div>
+
+
+                <div class="intro-feature">
+
+                    <span class="feature-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Continue from your last level
+                    </span>
+
+                </div>
+
+
+                <div class="intro-feature">
+
+                    <span class="feature-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Keep your points and badges
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Login Card -->
+
+        <section class="auth-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+                    →
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <p>
+                        Log in to continue
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Login Form -->
+
+            <form
+                id="loginForm"
+                class="auth-form"
+                novalidate
+            >
+
+
+                <!-- Email / Username -->
+
+                <div class="input-group">
+
+                    <label for="loginIdentifier">
+                        Email or Username
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            @
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="loginIdentifier"
+                            name="loginIdentifier"
+                            placeholder="Enter email or username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <small
+                        class="input-error"
+                        id="loginIdentifierError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="toggleLoginPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <small
+                        class="input-error"
+                        id="loginPasswordError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Remember Me -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                    >
+
+                    <span class="custom-checkbox"></span>
+
+                    <span class="terms-text">
+                        Remember me on this device
+                    </span>
+
+                </label>
+
+
+                <!-- Login Button -->
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                    id="loginButton"
+                >
+
+                    <span>
+                        Log In
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+            <!-- Register Link -->
+
+            <div class="switch-auth">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

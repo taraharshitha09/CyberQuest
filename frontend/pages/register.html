@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your CyberQuest account and start learning cyber security."
+    >
+
+    <title>Create Account | CyberQuest</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="auth-background">
+
+        <div class="auth-grid"></div>
+
+        <div class="auth-glow glow-left"></div>
+
+        <div class="auth-glow glow-right"></div>
+
+        <div class="auth-particles">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOP BRAND
+    ========================================== -->
+
+    <header class="auth-header">
+
+        <a
+            href="../index.html"
+            class="auth-brand"
+        >
+
+            <span class="auth-brand-mark">
+                CQ
+            </span>
+
+            <span class="auth-brand-name">
+                Cyber<span>Quest</span>
+            </span>
+
+        </a>
+
+
+        <a
+            href="../index.html"
+            class="back-home"
+        >
+            ← Home
+        </a>
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to light theme"
+>
+    ☀️
+</button>
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN AUTH AREA
+    ========================================== -->
+
+    <main class="auth-container">
+
+
+        <!-- Left Information -->
+
+        <section class="auth-intro">
+
+            <div class="intro-tag">
+                START YOUR JOURNEY
+            </div>
+
+
+            <h1>
+                Build Your
+                <span>Cyber Skills.</span>
+            </h1>
+
+
+            <p>
+                Create your account and start your journey
+                through 100 cyber security levels.
+            </p>
+
+
+            <div class="intro-features">
+
+                <div class="intro-feature">
+
+                    <span class="feature-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Save your progress
+                    </span>
+
+                </div>
+
+
+                <div class="intro-feature">
+
+                    <span class="feature-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Earn points and badges
+                    </span>
+
+                </div>
+
+
+                <div class="intro-feature">
+
+                    <span class="feature-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Unlock new worlds
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             REGISTER CARD
+        ====================================== -->
+
+        <section class="auth-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+                    +
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <p>
+                        Join CyberQuest for free
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Register Form -->
+
+            <form
+                id="registerForm"
+                class="auth-form"
+                novalidate
+            >
+
+
+                <!-- Full Name -->
+
+                <div class="input-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                    <small
+                        class="input-error"
+                        id="fullNameError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <small
+                        class="input-error"
+                        id="emailError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Username -->
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            @
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+                    <small
+                        class="input-error"
+                        id="usernameError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            minlength="4"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <!-- Password Strength -->
+
+                    <div class="password-strength">
+
+                        <div class="strength-bar">
+                            <span id="strengthProgress"></span>
+                        </div>
+
+                        <span id="strengthText">
+                            Use at least 4 characters
+                        </span>
+
+                    </div>
+
+
+                    <small
+                        class="input-error"
+                        id="passwordError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Confirm Password -->
+
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Enter password again"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+                    <small
+                        class="input-error"
+                        id="confirmPasswordError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- Terms -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span class="custom-checkbox"></span>
+
+                    <span class="terms-text">
+                        I agree to the CyberQuest rules.
+                    </span>
+
+                </label>
+
+
+                <small
+                    class="input-error"
+                    id="termsError"
+                ></small>
+
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                    id="registerButton"
+                >
+
+                    <span>
+                        Create Account
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- Login Link -->
+
+            <div class="switch-auth">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="login.html">
+                    Log In
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Success Message -->
+
+    <div
+        class="success-popup"
+        id="successPopup"
+        aria-hidden="true"
+    >
+
+        <div class="success-box">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h3>
+                Account Created!
+            </h3>
+
+            <p>
+                Your account is ready.
+                You can now log in.
+            </p>
+
+            <button
+                type="button"
+                id="goToLogin"
+            >
+                Log In
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>
