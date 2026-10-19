@@ -639,10 +639,7 @@ try {
         error
     );
 
-    showError(
-        "email",
-        "Cannot connect to CyberQuest server."
-    );
+    
 
 }
     });
