@@ -781,21 +781,22 @@ form.addEventListener(
 
         try {
 
-            const response = await fetch(
-                "http://localhost:8081/api/auth/login",
-                {
-                    method: "POST",
+           const response = await fetch(
+    "https://cyberquest-nx18.onrender.com/api/auth/register",
+    {
+        method: "POST",
 
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-                    body: JSON.stringify({
-                        identifier: enteredIdentifier,
-                        password: enteredPassword
-                    })
-                }
-            );
+        body: JSON.stringify({
+            username: usernameValue,
+            email: emailValue,
+            password: passwordValue
+        })
+    }
+);
 
             const data = await response.json();
 
