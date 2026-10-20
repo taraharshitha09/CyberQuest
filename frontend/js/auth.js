@@ -447,7 +447,7 @@ function setupRegisterPage() {
 
                 showError(
                     "password",
-                    "Password must have at least 4 characters."
+                    "Password must have 4 characters."
                 );
 
                 valid = false;
@@ -782,7 +782,7 @@ form.addEventListener(
         try {
 
            const response = await fetch(
-    "https://cyberquest-nx18.onrender.com/api/auth/register",
+   "https://cyberquest-nx18.onrender.com/api/auth/login",
     {
         method: "POST",
 
