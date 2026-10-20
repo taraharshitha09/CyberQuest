@@ -517,8 +517,8 @@ async function completeMission() {
 
             /* SEND COMPLETION TO BACKEND */
 
-            const response = await fetch(
-                "http://localhost:8081/api/progress/complete",
+          const response = await fetch(
+    "https://cyberquest-nx18.onrender.com/api/progress/complete",
                 {
                     method: "POST",
 
