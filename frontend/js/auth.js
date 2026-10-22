@@ -1,21 +1,5 @@
-
-/* =========================================================
-   CYBERQUEST
-   Authentication System
-   ========================================================= */
-
-/* =========================================================
-   STORAGE KEYS
-========================================================= */
-
 const ACCOUNT_KEY = "cyberquest_account";
 const LOGIN_KEY = "cyberquest_logged_in";
-
-
-/* =========================================================
-   HELPER FUNCTIONS
-========================================================= */
-
 function getAccount() {
     const account = localStorage.getItem(ACCOUNT_KEY);
 
