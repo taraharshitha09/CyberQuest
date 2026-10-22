@@ -1,9 +1,8 @@
+javascript
 /* =========================================================
    CYBERQUEST
    Authentication System
-   Frontend Demo
    ========================================================= */
-
 
 /* =========================================================
    STORAGE KEYS
@@ -18,7 +17,6 @@ const LOGIN_KEY = "cyberquest_logged_in";
 ========================================================= */
 
 function getAccount() {
-
     const account = localStorage.getItem(ACCOUNT_KEY);
 
     if (!account) {
@@ -26,20 +24,15 @@ function getAccount() {
     }
 
     try {
-
         return JSON.parse(account);
-
     } catch (error) {
-
         console.error("Could not read account data.");
-
         return null;
     }
 }
 
 
 function saveAccount(account) {
-
     localStorage.setItem(
         ACCOUNT_KEY,
         JSON.stringify(account)
@@ -48,7 +41,6 @@ function saveAccount(account) {
 
 
 function showError(inputId, message) {
-
     const input = document.getElementById(inputId);
 
     if (!input) return;
@@ -71,7 +63,6 @@ function showError(inputId, message) {
 
 
 function clearError(inputId) {
-
     const input = document.getElementById(inputId);
 
     if (!input) return;
@@ -93,7 +84,6 @@ function clearError(inputId) {
 
 
 function markSuccess(inputId) {
-
     const input = document.getElementById(inputId);
 
     if (!input) return;
@@ -101,9 +91,7 @@ function markSuccess(inputId) {
     const group = input.closest(".input-group");
 
     if (group) {
-
         group.classList.remove("error");
-
         group.classList.add("success");
     }
 
@@ -161,11 +149,9 @@ function updatePasswordStrength(password) {
         return;
     }
 
-
     if (password.length === 0) {
 
         progress.style.width = "0%";
-
         progress.style.background = "#ff4d6d";
 
         text.textContent =
@@ -174,15 +160,12 @@ function updatePasswordStrength(password) {
         return;
     }
 
-
     const score =
         getPasswordStrength(password);
-
 
     if (score <= 1) {
 
         progress.style.width = "25%";
-
         progress.style.background = "#ff4d6d";
 
         text.textContent =
@@ -191,7 +174,6 @@ function updatePasswordStrength(password) {
     } else if (score <= 3) {
 
         progress.style.width = "60%";
-
         progress.style.background = "#ffd166";
 
         text.textContent =
@@ -200,7 +182,6 @@ function updatePasswordStrength(password) {
     } else {
 
         progress.style.width = "100%";
-
         progress.style.background = "#38ff88";
 
         text.textContent =
@@ -213,10 +194,7 @@ function updatePasswordStrength(password) {
    SHOW / HIDE PASSWORD
 ========================================================= */
 
-function setupPasswordToggle(
-    buttonId,
-    inputId
-) {
+function setupPasswordToggle(buttonId, inputId) {
 
     const button =
         document.getElementById(buttonId);
@@ -224,33 +202,25 @@ function setupPasswordToggle(
     const input =
         document.getElementById(inputId);
 
-
     if (!button || !input) {
         return;
     }
 
+    button.addEventListener("click", () => {
 
-    button.addEventListener(
-        "click",
-        () => {
+        const isPassword =
+            input.type === "password";
 
-            const isPassword =
-                input.type === "password";
+        input.type =
+            isPassword
+                ? "text"
+                : "password";
 
-
-            input.type =
-                isPassword
-                    ? "text"
-                    : "password";
-
-
-            button.textContent =
-                isPassword
-                    ? "Hide"
-                    : "Show";
-
-        }
-    );
+        button.textContent =
+            isPassword
+                ? "Hide"
+                : "Show";
+    });
 }
 
 
@@ -263,11 +233,9 @@ function setupRegisterPage() {
     const form =
         document.getElementById("registerForm");
 
-
     if (!form) {
         return;
     }
-
 
     const fullName =
         document.getElementById("fullName");
@@ -287,16 +255,11 @@ function setupRegisterPage() {
     const terms =
         document.getElementById("terms");
 
-    const successPopup =
-        document.getElementById("successPopup");
-
     const goToLogin =
         document.getElementById("goToLogin");
 
 
-    /* -----------------------------------------
-       Password toggle
-    ----------------------------------------- */
+    /* Password toggle */
 
     setupPasswordToggle(
         "togglePassword",
@@ -304,44 +267,34 @@ function setupRegisterPage() {
     );
 
 
-    /* -----------------------------------------
-       Password strength
-    ----------------------------------------- */
+    /* Password strength */
 
-    password.addEventListener(
-        "input",
-        () => {
+    password.addEventListener("input", () => {
 
-            updatePasswordStrength(
-                password.value
-            );
+        updatePasswordStrength(
+            password.value
+        );
 
-            clearError("password");
-        }
-    );
+        clearError("password");
+    });
 
 
-    /* -----------------------------------------
-       Live validation
-    ----------------------------------------- */
+    /* Live validation */
 
     fullName.addEventListener(
         "input",
         () => clearError("fullName")
     );
 
-
     email.addEventListener(
         "input",
         () => clearError("email")
     );
 
-
     username.addEventListener(
         "input",
         () => clearError("username")
     );
-
 
     confirmPassword.addEventListener(
         "input",
@@ -349,15 +302,15 @@ function setupRegisterPage() {
     );
 
 
-    /* -----------------------------------------
-       Register
-    ----------------------------------------- */
+    /* =====================================================
+       REGISTER
+    ===================================================== */
 
-   form.addEventListener(
-    "submit",
-    async (event) => {
+    form.addEventListener(
+        "submit",
+        async (event) => {
+
             event.preventDefault();
-
 
             let valid = true;
 
@@ -366,7 +319,6 @@ function setupRegisterPage() {
 
             const nameValue =
                 fullName.value.trim();
-
 
             if (nameValue.length < 2) {
 
@@ -388,10 +340,8 @@ function setupRegisterPage() {
             const emailValue =
                 email.value.trim().toLowerCase();
 
-
             const emailPattern =
                 /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 
             if (!emailPattern.test(emailValue)) {
 
@@ -413,10 +363,8 @@ function setupRegisterPage() {
             const usernameValue =
                 username.value.trim();
 
-
             const usernamePattern =
                 /^[a-zA-Z0-9_]{3,20}$/;
-
 
             if (
                 !usernamePattern.test(
@@ -441,7 +389,6 @@ function setupRegisterPage() {
 
             const passwordValue =
                 password.value;
-
 
             if (passwordValue.length < 4) {
 
@@ -487,11 +434,9 @@ function setupRegisterPage() {
                     "termsError"
                 );
 
-
             if (!terms.checked) {
 
                 if (termsError) {
-
                     termsError.textContent =
                         "Please agree to the rules.";
                 }
@@ -501,152 +446,150 @@ function setupRegisterPage() {
             } else {
 
                 if (termsError) {
-
                     termsError.textContent = "";
                 }
             }
 
 
-            /* ---------------------------------
-               Stop if invalid
-            --------------------------------- */
+            /* Stop if invalid */
 
             if (!valid) {
                 return;
             }
 
 
-            /* ---------------------------------
-               Check existing account
-            --------------------------------- */
+            /* =================================================
+               CHECK EXISTING LOCAL ACCOUNT
+            ================================================= */
 
-           const existingAccount = getAccount();
+            const existingAccount =
+                getAccount();
 
-if (
-    existingAccount &&
-    existingAccount.email.toLowerCase() === emailValue
-) {
-    showError(
-        "email",
-        "An account with this email already exists."
-    );
+            if (
+                existingAccount &&
+                existingAccount.email &&
+                existingAccount.email.toLowerCase() ===
+                    emailValue
+            ) {
 
-    return;
-}
+                showError(
+                    "email",
+                    "An account with this email already exists."
+                );
 
-
-            /* ---------------------------------
-               Create account
-            --------------------------------- */
-
-          /* =========================================
-   REGISTER USER IN BACKEND
-========================================= */
-
-try {
-
-  const response = await fetch(
-    "http://localhost:8081/api/auth/register",
-    {
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-            username: usernameValue,
-            email: emailValue,
-            password: passwordValue
-        })
-    }
-);
+                return;
+            }
 
 
-    const data = await response.json();
+            /* =================================================
+               REGISTER WITH SPRING BOOT
+            ================================================= */
+
+            try {
+
+                const response = await fetch(
+                    "https://cyberquest-nx18.onrender.com/api/auth/register",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            username: usernameValue,
+                            email: emailValue,
+                            password: passwordValue
+                        })
+                    }
+                );
 
 
-    /* Registration failed */
-
-    if (!response.ok) {
-
-        showError(
-            "email",
-            data || "Registration failed."
-        );
-
-        return;
-    }
+                const data =
+                    await response.json();
 
 
-    /* =========================================
-       SAVE LOGIN SESSION
-    ========================================= */
+                /* Registration failed */
 
-    const account = {
+                if (!response.ok) {
 
-        fullName: nameValue,
+                    showError(
+                        "email",
+                        data.message ||
+                        data.error ||
+                        "Registration failed."
+                    );
 
-        email: data.email,
+                    return;
+                }
 
-        username: data.username,
 
-        userId: data.userId,
+                /* =================================================
+                   SAVE ACCOUNT
+                ================================================= */
 
-        progress: {
+                const account = {
 
-            currentWorld: 1,
+                    fullName: nameValue,
 
-            currentLevel: 1,
+                    email: data.email,
 
-            completedLevels: [],
+                    username: data.username,
 
-            points: 0,
+                    userId: data.userId,
 
-            coins: 0,
+                    progress: {
 
-            lives: 3
+                        currentWorld: 1,
 
+                        currentLevel: 1,
+
+                        completedLevels: [],
+
+                        points: 0,
+
+                        coins: 0,
+
+                        lives: 3
+                    }
+                };
+
+
+                saveAccount(account);
+
+
+                /* Login session */
+
+                localStorage.setItem(
+                    LOGIN_KEY,
+                    "true"
+                );
+
+
+                /* =================================================
+                   OPEN DASHBOARD
+                ================================================= */
+
+                window.location.href =
+                    "../dashboard.html";
+
+            } catch (error) {
+
+                console.error(
+                    "Registration error:",
+                    error
+                );
+
+                showError(
+                    "email",
+                    "Cannot connect to CyberQuest server."
+                );
+            }
         }
-
-    };
-
-
-    localStorage.setItem(
-        ACCOUNT_KEY,
-        JSON.stringify(account)
     );
 
 
-    localStorage.setItem(
-        LOGIN_KEY,
-        "true"
-    );
-
-
-    /* =========================================
-       OPEN DASHBOARD
-    ========================================= */
-
-    window.location.href =
-        "../dashboard.html";
-
-
-} catch (error) {
-
-    console.error(
-        "Registration error:",
-        error
-    );
-
-    
-
-}
-    });
-
-    /* -----------------------------------------
-       Go to login
-    ----------------------------------------- */
+    /* Go to Login */
 
     if (goToLogin) {
 
@@ -656,7 +599,6 @@ try {
 
                 window.location.href =
                     "login.html";
-
             }
         );
     }
@@ -672,7 +614,6 @@ function setupLoginPage() {
     const form =
         document.getElementById("loginForm");
 
-
     if (!form) {
         return;
     }
@@ -683,22 +624,18 @@ function setupLoginPage() {
             "loginIdentifier"
         );
 
-
     const password =
         document.getElementById(
             "loginPassword"
         );
 
-
     const rememberMe =
         document.getElementById(
             "rememberMe"
         );
-    
 
-    /* -----------------------------------------
-       Password toggle
-    ----------------------------------------- */
+
+    /* Password toggle */
 
     setupPasswordToggle(
         "toggleLoginPassword",
@@ -706,179 +643,270 @@ function setupLoginPage() {
     );
 
 
-    /* -----------------------------------------
-       Clear errors while typing
-    ----------------------------------------- */
+    /* Clear errors */
 
     identifier.addEventListener(
         "input",
-        () => {
-
-            clearError(
-                "loginIdentifier"
-            );
-
-        }
+        () => clearError("loginIdentifier")
     );
-
 
     password.addEventListener(
         "input",
-        () => {
-
-            clearError(
-                "loginPassword"
-            );
-
-        }
+        () => clearError("loginPassword")
     );
 
 
-    /* -----------------------------------------
-       Login
-    ----------------------------------------- */
+    /* =====================================================
+       LOGIN
+    ===================================================== */
 
-form.addEventListener(
-    "submit",
-    async (event) => {
+    form.addEventListener(
+        "submit",
+        async (event) => {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        clearError("loginIdentifier");
-        clearError("loginPassword");
+            clearError("loginIdentifier");
+            clearError("loginPassword");
 
-        const enteredIdentifier =
-            identifier.value.trim().toLowerCase();
 
-        const enteredPassword =
-            password.value;
+            const enteredIdentifier =
+                identifier.value.trim().toLowerCase();
 
-        /* Empty identifier */
+            const enteredPassword =
+                password.value;
 
-        if (!enteredIdentifier) {
 
-            showError(
-                "loginIdentifier",
-                "Please enter your email or username."
-            );
+            /* Empty identifier */
 
-            return;
-        }
-
-        /* Empty password */
-
-        if (!enteredPassword) {
-
-            showError(
-                "loginPassword",
-                "Please enter your password."
-            );
-
-            return;
-        }
-
-        /* Login using Spring Boot */
-
-        try {
-
-           const response = await fetch(
-   "https://cyberquest-nx18.onrender.com/api/auth/login",
-    {
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-            username: usernameValue,
-            email: emailValue,
-            password: passwordValue
-        })
-    }
-);
-
-            const data = await response.json();
-
-            /* Login failed */
-
-            if (!response.ok) {
+            if (!enteredIdentifier) {
 
                 showError(
-                    "loginPassword",
-                    data || "Email/username or password is incorrect."
+                    "loginIdentifier",
+                    "Please enter your email or username."
                 );
 
                 return;
             }
 
-            /* Get existing local account */
 
-            const oldAccount = getAccount() || {};
+            /* Empty password */
 
-            /* Create updated account */
+            if (!enteredPassword) {
 
-            const account = {
+                showError(
+                    "loginPassword",
+                    "Please enter your password."
+                );
 
-                ...oldAccount,
+                return;
+            }
 
-                username: data.username,
-                email: data.email,
-                userId: data.userId
 
-            };
+            /* =================================================
+               LOGIN WITH SPRING BOOT
+            ================================================= */
 
-            /* Save account */
+            try {
 
-            localStorage.setItem(
-                ACCOUNT_KEY,
-                JSON.stringify(account)
-            );
+                const response = await fetch(
+                    "https://cyberquest-nx18.onrender.com/api/auth/login",
+                    {
+                        method: "POST",
 
-            /* Save login session */
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
 
-            localStorage.setItem(
-                LOGIN_KEY,
-                "true"
-            );
+                        body: JSON.stringify({
+                            identifier: enteredIdentifier,
+                            password: enteredPassword
+                        })
+                    }
+                );
 
-            /* Remember Me */
 
-            if (rememberMe.checked) {
+                const data =
+                    await response.json();
+
+
+                /* Login failed */
+
+                if (!response.ok) {
+
+                    showError(
+                        "loginPassword",
+                        data.message ||
+                        data.error ||
+                        "Email/username or password is incorrect."
+                    );
+
+                    return;
+                }
+
+
+                /* =================================================
+                   GET OLD ACCOUNT
+                ================================================= */
+
+                const oldAccount =
+                    getAccount() || {};
+
+
+                /* =================================================
+                   UPDATE ACCOUNT
+                ================================================= */
+
+                const account = {
+
+                    ...oldAccount,
+
+                    username: data.username,
+
+                    email: data.email,
+
+                    userId: data.userId
+                };
+
+
+                saveAccount(account);
+
+
+                /* Login session */
 
                 localStorage.setItem(
-                    "cyberquest_remember",
+                    LOGIN_KEY,
                     "true"
                 );
 
-            } else {
 
-                localStorage.removeItem(
-                    "cyberquest_remember"
+                /* Remember Me */
+
+                if (rememberMe && rememberMe.checked) {
+
+                    localStorage.setItem(
+                        "cyberquest_remember",
+                        "true"
+                    );
+
+                } else {
+
+                    localStorage.removeItem(
+                        "cyberquest_remember"
+                    );
+                }
+
+
+                /* =================================================
+                   OPEN DASHBOARD
+                ================================================= */
+
+                window.location.href =
+                    "../dashboard.html";
+
+            } catch (error) {
+
+                console.error(
+                    "Login error:",
+                    error
+                );
+
+                showError(
+                    "loginPassword",
+                    "Cannot connect to CyberQuest server."
                 );
             }
+        }
+    );
+}
 
-            /* Go to dashboard */
 
-            window.location.href =
-                "../dashboard.html";
+/* =========================================================
+   THEME SYSTEM
+========================================================= */
 
-        } catch (error) {
+function setupTheme() {
 
-            console.error(
-                "Login error:",
-                error
-            );
+    const themeToggle =
+        document.getElementById("themeToggle");
 
-            showError(
-                "loginPassword",
-                "Cannot connect to CyberQuest server."
+    const savedTheme =
+        localStorage.getItem(
+            "cyberquest_theme"
+        );
+
+
+    /* Load saved theme */
+
+    if (savedTheme === "light") {
+
+        document.body.classList.add(
+            "light-theme"
+        );
+
+        if (themeToggle) {
+
+            themeToggle.textContent = "🌙";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to dark theme"
             );
         }
-
     }
-);
+
+
+    /* Theme toggle */
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle(
+                    "light-theme"
+                );
+
+                const isLight =
+                    document.body.classList.contains(
+                        "light-theme"
+                    );
+
+
+                if (isLight) {
+
+                    themeToggle.textContent = "🌙";
+
+                    themeToggle.setAttribute(
+                        "aria-label",
+                        "Switch to dark theme"
+                    );
+
+                    localStorage.setItem(
+                        "cyberquest_theme",
+                        "light"
+                    );
+
+                } else {
+
+                    themeToggle.textContent = "☀️";
+
+                    themeToggle.setAttribute(
+                        "aria-label",
+                        "Switch to light theme"
+                    );
+
+                    localStorage.setItem(
+                        "cyberquest_theme",
+                        "dark"
+                    );
+                }
+            }
+        );
+    }
 }
+
 
 /* =========================================================
    PAGE START
@@ -892,95 +920,7 @@ document.addEventListener(
 
         setupLoginPage();
 
+        setupTheme();
     }
 );
-// =========================================================
-// CYBERQUEST THEME SYSTEM - AUTH PAGES
-// =========================================================
 
-const themeToggle =
-    document.getElementById("themeToggle");
-
-
-// =========================================================
-// LOAD SAVED THEME
-// =========================================================
-
-const savedTheme =
-    localStorage.getItem("cyberquest_theme");
-
-
-if (savedTheme === "light") {
-
-    document.body.classList.add("light-theme");
-
-    if (themeToggle) {
-
-        themeToggle.textContent = "🌙";
-
-        themeToggle.setAttribute(
-            "aria-label",
-            "Switch to dark theme"
-        );
-
-    }
-
-}
-
-
-// =========================================================
-// THEME TOGGLE
-// =========================================================
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", () => {
-
-        document.body.classList.toggle(
-            "light-theme"
-        );
-
-        const isLight =
-            document.body.classList.contains(
-                "light-theme"
-            );
-
-
-        // LIGHT THEME
-        if (isLight) {
-
-            themeToggle.textContent = "🌙";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                "Switch to dark theme"
-            );
-
-            localStorage.setItem(
-                "cyberquest_theme",
-                "light"
-            );
-
-        }
-
-
-        // DARK THEME
-        else {
-
-            themeToggle.textContent = "☀️";
-
-            themeToggle.setAttribute(
-                "aria-label",
-                "Switch to light theme"
-            );
-
-            localStorage.setItem(
-                "cyberquest_theme",
-                "dark"
-            );
-
-        }
-
-    });
-
-}
