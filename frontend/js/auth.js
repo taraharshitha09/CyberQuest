@@ -1,4 +1,4 @@
-javascript
+
 /* =========================================================
    CYBERQUEST
    Authentication System
